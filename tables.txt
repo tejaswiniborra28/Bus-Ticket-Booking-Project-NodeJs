@@ -1,0 +1,82 @@
+                                 Tables
+								 -------
+Persons
+-----------------
+name
+gender
+phonenumber
+emailid
+password
+type
+
+create table Persons(name varchar(255),gender varchar(255),
+phonenumber int,emailid varchar(255) primary key,password varchar(255),type varchar(255));
+
+BusInfo
+--------
+serviceno
+travels
+seats
+
+
+create table BusInfo(serviceno varchar(255) primary key,travels varchar(255),seats int);
+
+
+
+Buses
+--------------------
+serviceno
+travels
+sdate
+stime
+edate
+etime
+start  
+end
+cost
+seats 
+
+create table Buses(serviceno varchar(255) ,travels varchar(255),sdate date,
+stime time,edate date,etime time,start varchar(255),end varchar(255),cost int,seats int);
+
+seats
+------------------
+serviceno
+travels
+sdate
+edate
+seatno
+cost
+status
+
+create table seats(serviceno varchar(255),travels varchar(255) ,sdate date,edate date,seatno int,cost int,status char(1));  
+
+
+Book
+------------
+trans_id
+serviceno
+travels
+sdate
+cost
+emailid
+pno
+noofseats
+amount
+accountno
+cvv
+
+create table Book(trans_id varchar(255) primary key,serviceno varchar(255),travels varchar(255),sdate date
+,cost int,emailid varchar(255),pno decimal(10),noofseats int,amount int,accountno decimal(12),cvv int);
+
+sbook
+----------
+trans_id
+seatno
+name
+age
+gender
+
+create table sbook(trans_id varchar(255),seatno int,name varchar(255),age int,gender varchar(255));
+ 
+

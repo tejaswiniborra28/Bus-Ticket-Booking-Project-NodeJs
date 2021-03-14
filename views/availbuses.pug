@@ -1,0 +1,17 @@
+doctype html
+html
+ body
+  -for(var i=0; i<f.length;i++){
+   div
+    form(action="/seats" method="post")
+     input.form-control(name='serviceno' placeholder='serviceno' id='serviceno' value=f[i].serviceno readonly)
+     input.form-control(name="travels" id="travels" value=f[i].travels readonly)
+     input.form-control(name="sdate" id="sdate" value=f[i].sdate readonly)
+     input.form-control(name="stime" id="stime" value=f[i].stime readonly)
+     input.form-control( name="edate" id="edate" value=f[i].edate readonly)
+     input.form-control( name="etime" id="etime" value=f[i].etime readonly)
+     input.form-control( name="cost" id="cost" value=f[i].cost readonly)
+     input.form-control(name="seats" id="seats" value=f[i].seats readonly)
+     input(type="submit" value="Book")
+  -}
+     

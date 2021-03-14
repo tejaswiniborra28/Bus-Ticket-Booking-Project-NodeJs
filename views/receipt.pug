@@ -1,0 +1,58 @@
+doctype html
+html
+ body
+  form(action="/final" method="get")
+   div 
+      h1  Successfully Booked
+      label Transaction Id:
+      input.form-control(id='trid' value=f[0].trans_id readonly)
+      br
+      br
+      label service no:
+      input.form-control(id='serviceno' value=f[0].serviceno readonly)
+      br
+      br
+      label Travels name:
+      input.form-control(id='travels' value=f[0].travels readonly)
+      br
+      br
+      label Start date:
+      input.form-control(id='sdate' value=f[0].sdate readonly)
+      br
+      br
+      label Cost for 1 seat:
+      input.form-control(id='cost' value=f[0].cost readonly)
+      br
+      br
+      label Email_id;
+      input.form-control(id='emailid' value=f[0].emailid readonly)
+      br
+      br
+      label PhoneNumber;
+      input.form-control(id='pno' value=f[0].pno readonly)
+   div
+      each i in f
+         br
+         br
+         label Seat no:
+         input.form-control(id="seat" value=i.seatno readonly)
+         label Passanger Name:
+         input.form-control(id="Name" value=i.name readonly)
+         label Age:
+         input.form-control(id="age" value=i.age readonly)  
+         label Gender:
+         input.form-control(id="gender" value=i.gender readonly)  
+
+   
+   br
+   br
+   label no of seats:
+   input.form-control(id="seats" value=f[0].noofseats readonly) 
+   br
+   br
+   label Total Amount Paid:
+   input.form-control(id="Amount" value=f[0].amount readonly)     
+   br
+   br
+
+   input(type="submit" value="Ok")

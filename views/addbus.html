@@ -1,0 +1,42 @@
+<html>  
+<body align="center">  
+ 
+<form action="/addbus" method="POST">
+<h1> Add Service </h1>
+Service No: <input type="number" id="serviceno"name="serviceno" required><br><br>
+Start Date: <input type="date" id="sdate" name="sdate" required>
+
+Start Time: <input type="time" id="stime" name="stime" required><br><br>
+End Date: <input type="date" id="edate" name="edate" required>
+
+
+End Time: <input type="time" id="etime" name="etime" required><br><br>
+
+<label for="start">Choose start point:</label>
+
+<select id="start" name ="start">
+  <option value="Hyderabad">Hyderabad</option>
+  <option value="vijayawada">vijayawada</option>
+  <option value="guntur">guntur</option>
+  <option value="chennai">chennai</option>
+  <option value="Bhimavaram">Bhimavaram</option>
+</select><br><br>
+
+<label for="end">Choose start point:</label>
+
+<select id="end" name ="end">
+  <option value="Hyderabad">Hyderabad</option>
+  <option value="vijayawada">vijayawada</option>
+  <option value="guntur">guntur</option>
+  <option value="chennai">chennai</option>
+  <option value="Bhimavaram">Bhimavaram</option>
+</select><br><br>
+
+cost : <input type="number" id="cost" name="cost" required><br><br>
+
+  
+<input type="submit" value="ADD">   
+
+</form>
+</body>  
+</html>

@@ -1,0 +1,75 @@
+doctype html
+html
+ body
+  form(action="/details" method="post")
+   div 
+      h1  Booking page
+      -var p=f[0].serviceno
+      -var p1=f[0].travels
+      -var p2=f[0].sdate
+      -var p3=f[0].cost
+      -var count=0
+      label service no:
+      input.form-control(name='serviceno' placeholder='serviceno' id='serviceno' value=p readonly)
+      br
+      br
+      label Travels name:
+      input.form-control(name='travels' placeholder='travels' id='travels' value=p1 readonly)
+      br
+      br
+      label Start date:
+      input.form-control(name='sdate' placeholder='sdate' id='sdate' value=p2 readonly)
+      br
+      br
+      label Cost for 1 seat:
+      input.form-control(name='cost' placeholder='cost' id='cost' value=p3 readonly)
+      br
+      br
+      label Email_id;
+      input.form-control(type="text" name='emailid' id='emailid' required)
+      br
+      br
+      label PhoneNumber;
+      input.form-control(type="number" name='pno' id='pno' required)
+   div
+      each i in f
+         -count=count+1
+         -var k=i.seatno
+         -var s="seat"+count
+         -var n="name"+count
+         -var a="age"+count
+         -var g="gender"+count
+         br
+         br
+         label Seat no:
+         input.form-control(name=s id=s value=i.seatno readonly)
+         label Name:
+         input.form-control(type="text" name=n id=n placeholder=n required)
+         label Age:
+         input.form-control(type="number" name=a id=a required)  
+         label Gender:
+         input.form-control(type="radio" name=g id="male"+count value="male") 
+         label(for='male'+count) male
+         input.form-control(type="radio" name=g id="female"+count value="female")
+         label(for="female"+count) female
+   
+   br
+   br
+   label no of seats:
+   input.form-control(type="number" name="seats" id="seats" value=count readonly) 
+   br
+   br
+   label Amount:
+   input.form-control(type="number" name="Amount" id="Amount" value=count*p3 readonly)     
+   br 
+   br
+   label Account no:
+   input.form-control(type="number" name="Account" id="Account" required)
+   br
+   br
+   label CVV:
+   input.form-control(type="number" name="CVV" id="CVV1" required)  
+   br
+   br
+
+   input(type="submit" value="submit")

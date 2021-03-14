@@ -1,0 +1,72 @@
+doctype html
+html
+ body
+  form(method="Post" , action="/update-details")
+   h1 Welcome to edit page
+   
+   label(for='serviceno') serviceno: 
+   input.form-control(type='text' name='serviceno' placeholder='serviceno' id='serviceno' value=f[0].serviceno readonly)
+   
+   br
+   br
+   
+   label Travels Name: 
+   input.form-control(type="text" name="travels" id="travels" value=f[0].travels readonly)
+   
+   br
+   br
+
+   label Start Time: 
+   input.form-control(type="Time" name="stime" id="stime" value=f[0].stime )
+   
+      
+   br
+   br
+     
+ 
+   label End Time: 
+   input.form-control(type="Time" name="etime" id="etime" value=f[0].etime )
+      
+   br
+   br
+   
+   label Starting point:
+   select.form-control(id="start" name ="start" value=f[0].start)
+    option(value='Hyderabad') Hyderabad
+    option(value='vijayawada') vijayawada
+    option(value='guntur') guntur
+    option(value='chennai') chennai
+    option(value='Bhimavaram') Bhimavaram
+      
+   br
+   br
+   
+   label End Point: 
+   select.form-control(id="end" name ="end" value=f[0].end)
+    option(value='Hyderabad') Hyderabad
+    option(value='vijayawada') vijayawada
+    option(value='guntur') guntur
+    option(value='chennai') chennai
+    option(value='Bhimavaram') Bhimavaram
+   
+      
+   br
+   br
+   
+   label cost:
+   input.form-control(type="text" name="cost" id="cost" value=f[0].cost )
+   
+      
+   br
+   br
+   
+   label No of Seats: 
+   input.form-control(type="text" name="seats" id="seats" value=f[0].seats readonly)
+      
+   br
+   br
+   
+   button(type="submit") Update
+   
+   
+ 

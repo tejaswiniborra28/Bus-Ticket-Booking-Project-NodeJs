@@ -1,0 +1,52 @@
+doctype html
+html
+ body
+  form(action="/selection" method="post")
+   div 
+      h1 Please select seats for booking
+      -var p=f[1].serviceno
+      -var p1=f[1].travels
+      -var p2=f[1].sdate
+      -var p3=f[1].cost
+      input.form-control(name='serviceno' placeholder='serviceno' id='serviceno' value=p readonly)
+      input.form-control(name='travels' placeholder='travels' id='travels' value=p1 readonly)
+      input.form-control(name='sdate' placeholder='sdate' id='sdate' value=p2 readonly)
+      input.form-control(name='cost' placeholder='cost' id='cost' value=p3 readonly)
+   div
+      each i in f
+         -var k=i.seatno
+         -var s="  "
+         if(i.status!='o')
+            if(i.seatno%2==0)
+              if(i.seatno%4==0 && i.seatno%2==0)
+                 input.form-control(name=k placeholder=k type="checkbox" id=k value=i.seatno disabled)
+                 |#{k}
+                 <br>
+              else
+                 input.form-control(name=k placeholder=k type="checkbox" id=k value=i.seatno disabled)
+                 |#{k}
+                 |#{s}
+                 |#{s}
+            
+            else
+              input.form-control(name=k placeholder=k type="checkbox" id=k value=i.seatno disabled)
+              |#{k}
+              |#{s}
+         else 
+            if(i.seatno%2==0)
+              if(i.seatno%4==0 && i.seatno%2==0)
+                input.form-control(name=k placeholder=k type="checkbox" id=k value=i.seatno)
+                |#{k}
+                <br>
+              else
+                input.form-control(name=k placeholder=k type="checkbox" id=k value=i.seatno)
+                |#{k}
+                |#{s}
+                |#{s}
+            
+            else
+              input.form-control(name=k placeholder=k type="checkbox" id=k value=i.seatno)
+              |#{k}
+              |#{s}
+            
+   input(type="submit" value="Select")
